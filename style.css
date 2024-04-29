@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Lora", serif;
+}
+body{
+     /*background-color: rgb(189, 234, 255);
+    aniadir foto de fonto*/
+    background-image: url(img/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex; /*permite crear diseños flexibles y adaptables*/
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+header{
+    position: absolute;
+    top: 10px;
+    left: 0px;
+    width: 100%;
+    padding: 0px, 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: purple;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+header .logo:hover{
+    color: rgb(3, 3, 3);
+    background-color: rgb(192, 4, 179);
+    transition: 1s;
+}
+header .navbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .navbar> a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 0 20px;
+    transition: 0.7s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+.navbar>a:hover{
+    color: rgb(198, 57, 245);
+}
+
+.mostrar-menu, 
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+}
+.mostrar-menu{
+    order: 1;
+}
+#check{
+    display: none;
+}
+
+/***************************************/
+/*            MEDIA QUERYS             */
+/***************************************/
+/* Para pantallas pequeñas (móviles) */
+@media screen and (max-width: 576px) {
+    /*HEADER*/
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+    .navbar{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: grey;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    header .navbar a{
+        display: block;
+        padding: 20px;
+        color: white;
+    }
+    .esconder-menu{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #check:checked ~ .navbar{
+        right: 0;
+    }
+}
+
+/*INDEX*/
+/*Contenido de la Web*/
+.contenido{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contenido .tituloBox{
+    max-width: 600px;
+    text-align: center;
+}
+.contenido .tituloBox h2{
+    font-size: 4.5em;
+    text-transform: uppercase;
+    color: black;
+}
+.contenido .tituloBox h2 span{
+    background:rgb(65, 7, 65);
+    color: white;
+    padding: 0 10px;
+    font-family: "Lora", serif;
+    font-weight: 600;
+    border-radius: 20px;
+    font-size: 0.7em;
+}
+.contenido .tituloBox p{
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: purple;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.contenido .tituloBox a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: blueviolet;
+    font-size: 0.8em;
+    background: rgb(203, 202, 202);
+    padding: 10px 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+.contenido .tituloBox a:hover{
+    color: white;
+    background: purple;
+    transition: 0.5s;
+}
+.contenido .imgBox{
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: -50px;
+    z-index: -5;
+    opacity: 0.3;
+}
+.contenido .imgBox img{
+    height: 70vh;
+}
+.contenido .imgBox img:hover{
+    height: 70vh;
+}
+
+
+/*Copyright*/
+.copyright{
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.copyright p{
+    color: black;
+    text-align: center;
+    margin-left: 100px;
+    font-style: italic;
+    font-size: 1em;
+}
+
+/*RRSS*/
+.redesSociales{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px 10px;
+    list-style: none;
+}
+.redesSociales li{
+    padding: 10px;
+}
+.redesSociales li a{
+    color: white;
+    font-size: 2.5em;
+    transition: 0.3s;
+}
+.redesSociales li:hover a{
+    color: black;
+}
+
+/*Circulo*/
+.circulo{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: rgba(206, 99, 195, 0.723);
+    clip-path: circle(650px at right 800px);
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+}
+/*QUIENES SOMOS*/
+/*Contenido de la quienes somos*/
+.contenidoQuienes{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+.contenidoQuienes .tituloQuienes{
+    position: relative;
+    max-width: 600px;
+    text-align: justify;
+}
+.contenidoQuienes .tituloQuienes h2{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: black;
+}
+.contenidoQuienes .tituloQuienes p{
+    font-size: 1em;
+    line-height: 1.5;
+    color: rgb(88, 3, 88);
+    font-family: "Lora", serif;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.contenidoQuienes .imgBoxquienes{
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 170px;
+    margin-top: -50px;
+    z-index: -5;
+}
+.contenidoQuienes .imgBoxquienes img{
+    height: 65vh;
+    opacity: 0.85;
+}
+.contenidoQuienes .imgBoxquienes img:hover{
+    height: 65vh;
+}
+
+/*PROYECTOS*/
+.contenidoProyectos .tituloProyectos{
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    padding-left: 300px;
+}
+.contenidoProyectos .tituloProyectos h2{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: black;
+}
+.contenidoProyectos .tituloProyectos p{
+    font-size: 1em;
+    line-height: 1.5;
+    color: rgb(88, 3, 88);
+    font-family: "Lora", serif;
+    font-weight: 300;
+    margin-bottom: 28px;
+    margin-top: 10px;
+}
+.contenidoProyectos .navBarProyectos{
+    position: relative; 
+    display: flex;  
+}
+.contenidoProyectos .navBarProyectos li{
+    list-style: none;
+    margin-left: 2px;
+}
+.contenidoProyectos .navBarProyectos li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background-color: rgb(64, 64, 64);
+}
+.contenidoProyectos .navBarProyectos li :hover{
+    background-color: rgb(192, 4, 179);
+    color: black;
+}
+.contenidoProyectos .imgBoxProyectos{
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 0px;
+    margin-top: 25px;
+    z-index: -5;
+    align-items: center;
+    padding-left: 250px;
+}
+.contenidoProyectos .imgBoxProyectos img{
+    height: 55vh;
+    opacity: 0.85;
+}
+.contenidoProyectos .imgBoxProyectos img:hover{
+    height: 55vh;
+}
+.contenido-asignaturas:hover li{
+    opacity: 0.2;
+    transform: scale(0.7);
+    transition:2s;
+}
+.contenido-asignaturas:hover li:hover{
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+/*Proyectos por asignatura*/
+.tituloLenguaje{
+    margin-left: 1em;
+    text-transform: uppercase;
+}
+.imgBoxSlider-padre{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.imgBoxSlider-padre>div{
+    margin-right: 1px;
+}
+.imgBoxSlider-padre>div>img{
+    max-width: 600px;
+    height: 45vh;
+}
+
+/***************************************/
+/*              CONTACTO               */
+/***************************************/
+
+.contact-info>ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content .logo {
+    text-align: center;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    padding-bottom: 0.5em;
+}
+
+.logo span {
+    color: purple;
+}
+
+.contact-wrapper {
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+
+.contact-wrapper > * {
+    padding: 1em;
+}
+
+.contact-form {
+    background: rgba(165, 160, 165, 0.411);
+    border-radius: 10px;
+}
+
+.contact-form form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact-form form label {
+    display: block;
+}
+
+.contact-form form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.contact-form form .block {
+    grid-column: 1 / 3;
+}
+
+.contact-form form button,
+.contact-form form input,
+.contact-form form textarea {
+    width: 100%;
+    padding:0.7em;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 10px;
+    outline: 0;
+    color: #fff;
+    border-bottom: 1px solid #252525;
+}
+
+.contact-form form button {
+    background: purple;
+    border: 0;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.contact-form form button:hover,
+.contact-form form button:focus {
+    color: rgb(3, 3, 3);
+    background-color: rgb(192, 4, 179);
+    transition: background-color 1s;
+    outline: 0;
+    cursor: pointer; /*manita*/
+}
+
+/* CONTACT INFO */
+.contact-info {
+    background: #ffffffa8;
+    border-radius: 10px;
+}
+
+.contact-info h4, .contact-info ul, .contact-info p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+/* LARGE SIZE */
+@media(min-width: 992px) {
+    body {
+        padding: 0 4em;
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+    .contact-wrapper > * {
+        padding: 2em;
+    }
+    .contact-info h4,
+    .contact-info ul,
+    .contact-info p {
+        text-align: left;
+    }
+}
+
+/***************************************/
+/*                 CV                  */
+/***************************************/
+.content-cv h1{
+    text-transform: uppercase;
+}
+.content-cv p{
+    padding-bottom: 1em;
+}
+.content-cv img{
+    width: 10em;
+    border-radius: 50%;
+    align-items: center;
+    transform: translateY(1em);
+    transform: translateX(2em);
+    border: solid 6px #ffffffaa;
+    text-align: center;
+    align-items: center;
+}
+.contenidocv{
+    position: relative;
+    left: 30em;
+    bottom: 10em;
+}
+.contenidocv:hover div{
+    opacity: 0.2;
+    transform: scale(0.7);
+    transition:2s;
+}
+.contenidocv:hover div:hover{
+    opacity: 1;
+    transform: scale(1.3);
+}
+.experiencia{
+    background-color: #25252512;
+    padding: 1em;
+    border-radius: 10px;
+    margin-right: 30em;
+}
+.experiencia:hover{
+    background-color: purple;
+    color: white;
+}
+.experiencia .tituloexperiencia{
+    text-align: center;
+}
+.listacv>li{
+    list-style: none;
+    padding: 0;
+}
+.skills{
+    background-color: #25252512;
+    padding: 1em;
+    border-radius: 10px;
+    margin-right: 30em;
+    margin-top: 2em;
+
+}
+.skills:hover{
+    background-color: purple;
+    color: white;
+}
+.skills .tituloskills{
+    text-align: center;
+}
+.listaskills>li{
+    list-style: none;
+    padding: 0;
+}
+
+
